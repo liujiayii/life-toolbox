@@ -29,25 +29,7 @@ if (isMp) {
   )
 }
 export default defineConfig({
-  presets: [
-    ...presets,
-    // 支持图标，需要搭配图标库，eg: @iconify-json/carbon, 使用 `<button class="i-carbon-sun dark:i-carbon-moon" />`
-    presetIcons({
-      scale: 1.2,
-      warn: true,
-      extraProperties: {
-        display: 'inline-block',
-        'vertical-align': 'middle',
-      },
-    }),
-    // 将颜色函数 (rgb()和hsl()) 从空格分隔转换为逗号分隔，更好的兼容性app端，example：
-    // `rgb(255 0 0)` -> `rgb(255, 0, 0)`
-    // `rgba(255 0 0 / 0.5)` -> `rgba(255, 0, 0, 0.5)`
-    // 与群友的正常写法冲突，先去掉！（2024-05-25）
-    // presetLegacyCompat({
-    //   commaStyleColorFunction: true,
-    // }) as Preset,
-  ],
+  presets: [...presets],
   /**
    * 自定义快捷语句
    * @see https://github.com/unocss/unocss#shortcuts

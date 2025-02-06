@@ -3,7 +3,7 @@ import { defineUniPages } from '@uni-helper/vite-plugin-uni-pages'
 export default defineUniPages({
   globalStyle: {
     navigationStyle: 'default',
-    navigationBarTitleText: '万能计算器',
+    navigationBarTitleText: '千奇百怪计算器',
     navigationBarBackgroundColor: '#f8f8f8',
     navigationBarTextStyle: 'black',
     backgroundColor: '#FFFFFF',

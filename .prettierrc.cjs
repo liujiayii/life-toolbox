@@ -1,10 +1,10 @@
 // @see https://prettier.io/docs/en/options
 module.exports = {
-  singleQuote: true,
+  singleQuote: false,
   printWidth: 100,
   tabWidth: 2,
   useTabs: false,
-  semi: false,
+  semi: true,
   trailingComma: 'all',
   endOfLine: 'auto',
   htmlWhitespaceSensitivity: 'ignore',

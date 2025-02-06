@@ -87,17 +87,6 @@ export default ({ command, mode }) => {
       __UNI_PLATFORM__: JSON.stringify(UNI_PLATFORM),
       __VITE_APP_PROXY__: JSON.stringify(VITE_APP_PROXY),
     },
-    css: {
-      postcss: {
-        plugins: [
-          // autoprefixer({
-          //   // 指定目标浏览器
-          //   overrideBrowserslist: ['> 1%', 'last 2 versions'],
-          // }),
-        ],
-      },
-    },
-
     resolve: {
       alias: {
         '@': path.join(process.cwd(), './src'),
