@@ -2,7 +2,7 @@
 <route lang="json5">
 {
   style: {
-    navigationBarTitleText: '数学计算器',
+    navigationBarTitleText: "数学计算器",
   },
 }
 </route>
@@ -133,7 +133,7 @@
         <view id="btns2-left">
           <view class="btns2-left-part">
             <view
-              class="`btn ${tapped['1']}`"
+              :class="`btn ${tapped['1']}`"
               @click="btnClicked"
               @touchstart="btnTouchStart"
               @touchend="btnTouchEnd"
@@ -206,39 +206,39 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
-import Calc from '../utils/calc'
-import { onLoad } from '@dcloudio/uni-app'
+import { ref, onMounted } from "vue";
+import Calc from "../utils/calc";
+import { onLoad } from "@dcloudio/uni-app";
 
-const calc = ref<any>({})
-const tapped = ref<any>({})
+const calc = ref<any>({});
+const tapped = ref<any>({});
 onMounted(() => {
-  Calc.reset()
-})
+  Calc.reset();
+});
 
 const btnClicked = (e) => {
-  console.log(e)
-  const code = e.target.dataset.op
-  Calc.addOp(code)
-  console.log(Calc.getVars())
-  calc.value = Calc.getVars()
-}
+  console.log(e);
+  const code = e.target.dataset.op;
+  Calc.addOp(code);
+  console.log(Calc.getVars());
+  calc.value = Calc.getVars();
+};
 const btnTouchStart = (e) => {
-  console.log(e)
-  const code = e.target.dataset.op
-  tapped.value = { [code]: 'active' }
-}
+  console.log(e);
+  const code = e.target.dataset.op;
+  tapped.value = { [code]: "active" };
+};
 const btnTouchEnd = (e) => {
-  console.log(e)
-  const code = e.target.dataset.op
-  tapped.value = {}
-}
+  console.log(e);
+  const code = e.target.dataset.op;
+  tapped.value = {};
+};
 
 onLoad(() => {
-  uni.showShareMenu({})
-})
+  uni.showShareMenu({});
+});
 </script>
 
 <style scoped lang="scss">
-@import url('./index.scss');
+@import url("./index.scss");
 </style>
