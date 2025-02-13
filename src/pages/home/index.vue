@@ -2,7 +2,7 @@
 <route lang="json5" type="home">
 {
   style: {
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: "首页",
   },
 }
 </route>
@@ -21,20 +21,25 @@
 </template>
 
 <script lang="ts" setup>
-import { onLoad } from '@dcloudio/uni-app'
+import { onLoad } from "@dcloudio/uni-app";
 
 const list = [
-  { icon: 'a-precisemonitor', text: '数学计算器', url: '/packages/math-calculator/index/index' },
-  { icon: 'more', text: '……' },
-]
+  { icon: "a-precisemonitor", text: "数学计算器", url: "/packages/math-calculator/index/index" },
+  {
+    icon: "a-precisemonitor",
+    text: "血型计算器",
+    url: "/packages/blood-type-calculator/index/index",
+  },
+  { icon: "more", text: "……" },
+];
 
 defineOptions({
-  name: 'Home',
-})
+  name: "Home",
+});
 
 onLoad(() => {
-  uni.showShareMenu({})
-})
+  uni.showShareMenu({});
+});
 </script>
 
 <style></style>
