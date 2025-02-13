@@ -65,22 +65,38 @@ function handleSubmit() {
   form.value
     .validate()
     .then(({ valid, errors }) => {
-      console.log(valid);
-      console.log(errors);
       if (valid) {
         calculateBloodType(formModel.value);
       }
     })
     .catch((error) => {
-      console.log(error, "error");
+      uni.showToast({
+        title: error.message || "表单验证失败",
+        icon: "error",
+      });
     });
 }
 
 const result = ref<string[] | null>(null);
 
+/**
+ * 根据父母血型计算可能的子女血型
+ * 计算规则基于孟德尔遗传定律：
+ * - A型和O型基因：A是显性，O是隐性
+ * - B型和O型基因：B是显性，O是隐性
+ * - A型和B型基因：共显性，产生AB型
+ */
 function calculateBloodType(model: IFormModel) {
   if (model.motherBloodType && model.fatherBloodType) {
-    result.value = bloodTypeCompatibility[model.motherBloodType][model.fatherBloodType];
+    try {
+      result.value = bloodTypeCompatibility[model.motherBloodType][model.fatherBloodType];
+    } catch (error) {
+      uni.showToast({
+        title: "血型计算出错",
+        icon: "error",
+      });
+      result.value = null;
+    }
   } else {
     result.value = null;
   }
