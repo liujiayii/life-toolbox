@@ -6,7 +6,8 @@
 interface NavigateToOptions {
   url: "/pages/home/index" |
        "/pages/about/index" |
-       "/packages/math-calculator/index/index";
+       "/packages/math-calculator/index/index" |
+       "/packages/blood-type-calculator/index/index";
 }
 interface RedirectToOptions extends NavigateToOptions {}
 

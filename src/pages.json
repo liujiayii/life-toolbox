@@ -1,7 +1,7 @@
 {
   "globalStyle": {
     "navigationStyle": "default",
-    "navigationBarTitleText": "万能计算器",
+    "navigationBarTitleText": "千奇百怪计算器",
     "navigationBarBackgroundColor": "#f8f8f8",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#FFFFFF"
@@ -62,6 +62,18 @@
           "type": "page",
           "style": {
             "navigationBarTitleText": "数学计算器"
+          }
+        }
+      ]
+    },
+    {
+      "root": "packages/blood-type-calculator",
+      "pages": [
+        {
+          "path": "index/index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "血型计算器"
           }
         }
       ]
